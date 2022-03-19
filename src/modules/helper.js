@@ -1,10 +1,16 @@
-const smoothScroll = (e) => {
-    const perem = e.tagName.toLowerCase() == 'a' ? e.getAttribute('href').substr(1) : e.closest('a').getAttribute('href').substr(1);
+const smoothScroll = () => {
+    const smoothLinks = document.querySelectorAll('a[href^="#"]');
+    for (let smoothLink of smoothLinks) {
+        smoothLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            const id = smoothLink.getAttribute('href');
 
-    document.getElementById(perem).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-    });
+            document.querySelector(id).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    };
 };
 
 const slicer = (str, num) => {
