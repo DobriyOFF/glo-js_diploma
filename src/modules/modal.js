@@ -3,7 +3,7 @@ const modal = () => {
     const modalCallback = document.querySelector('.modal-callback')
 
     const toggleModal = (e) => {
-        if (e.target.closest('.callback-btn')) {
+        if (e.target.closest('.callback-btn') || e.target.closest('.button-services')) {
             e.preventDefault();
             modalCallback.style.display = 'block'
             modalOverlay.style.display = 'block'
