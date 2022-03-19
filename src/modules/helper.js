@@ -1,17 +1,14 @@
-const smoothScroll = () => {
-    const smoothLinks = document.querySelectorAll('a[href^="#"]');
-    for (let smoothLink of smoothLinks) {
-        smoothLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            const id = smoothLink.getAttribute('href');
+// const smoothScroll = (item) => {
+//     item.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const id = item.getAttribute('href');
 
-            document.querySelector(id).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    };
-};
+//         document.querySelector(id).scrollIntoView({
+//             behavior: 'smooth',
+//             block: 'start'
+//         });
+//     });
+// };
 
 const slicer = (str, num) => {
     return str.trim().length > num ?
@@ -48,5 +45,4 @@ const animate = ({
 export {
     animate,
     slicer,
-    smoothScroll,
 };
