@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const smoothScroll = () => {
 //     const smoothLinks = document.querySelectorAll('a[href^="#"]');
 //     for (let smoothLink of smoothLinks) {
@@ -11,6 +12,18 @@
 //             });
 //         });
 //     };
+=======
+// const smoothScroll = (item) => {
+//     item.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const id = item.getAttribute('href');
+
+//         document.querySelector(id).scrollIntoView({
+//             behavior: 'smooth',
+//             block: 'start'
+//         });
+//     });
+>>>>>>> serviceScroll
 // };
 
 const slicer = (str, num) => {
