@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-// const smoothScroll = () => {
-//     const smoothLinks = document.querySelectorAll('a[href^="#"]');
-//     for (let smoothLink of smoothLinks) {
-//         smoothLink.addEventListener('click', function (e) {
-//             e.preventDefault();
-//             const id = smoothLink.getAttribute('href');
-
-//             document.querySelector(id).scrollIntoView({
-//                 behavior: 'smooth',
-//                 block: 'start'
-//             });
-//         });
-//     };
-=======
-// const smoothScroll = (item) => {
-//     item.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         const id = item.getAttribute('href');
-
-//         document.querySelector(id).scrollIntoView({
-//             behavior: 'smooth',
-//             block: 'start'
-//         });
-//     });
->>>>>>> serviceScroll
-// };
-
 const slicer = (str, num) => {
     return str.trim().length > num ?
         str.trim().substring(0, num).trim() + '...' :
