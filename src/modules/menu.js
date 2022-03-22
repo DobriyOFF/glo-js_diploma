@@ -1,4 +1,3 @@
-import { smoothScroll } from "./helper"
 const menu = () => {
     const topMenu = document.querySelector('.top-menu')
     

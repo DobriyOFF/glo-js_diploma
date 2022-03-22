@@ -1,7 +1,3 @@
-import {
-    smoothScroll
-} from "./helper"
-
 const serviceScroll = () => {
     const questSection = document.querySelector('.push70')
     const up = document.querySelector('.up')
