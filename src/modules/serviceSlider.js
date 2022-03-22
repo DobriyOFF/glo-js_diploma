@@ -28,8 +28,6 @@ const serviceSlider = () => {
         if (position < serviceItem.length) {
             serviceItem[start++].style.display = 'none'
             serviceItem[position++].style.display = 'block'
-            console.log(start)
-            console.log(position)
         }
     })
 }
