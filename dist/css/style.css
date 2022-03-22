@@ -1363,6 +1363,15 @@ video#video_background {
 	height: 40px;
 }
 
+.services-carousel {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.services-item {
+	margin-right: 14px;
+}
+
 .services-elements .title-h5:after {
 	content: "";
 	display: block;
