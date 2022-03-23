@@ -1,10 +1,10 @@
 const sendForm = ({
     formId,
-    someElem = []
 }) => {
     const form = document.getElementById(formId)
     const statusBlock = document.createElement('div')
     const modal = document.querySelector('.modal-callback')
+    const modalOverlay = document.querySelector('.modal-overlay')
 
     const loadText = 'Загрузка...'
     const errorText = 'Ошибка...'
@@ -14,6 +14,7 @@ const sendForm = ({
         let success = true
         list.forEach(input => {
             if (input.name == 'fio' && input.value.length < 2) {
+                console.log(input.name)
                 success = false
             }
             if (input.name == 'tel' && input.value.length < 10) {
@@ -45,21 +46,14 @@ const sendForm = ({
             formBody[key] = val
         ])
 
-        someElem.forEach(elem => {
-            const element = document.getElementById(elem.id)
-            if (elem.type === 'block') {
-                formBody[elem.id] = element.textContent
-            } else if (elem.type === 'input') {
-                formBody[elem.id] = element.value
-            }
-        })
-
         if (validate(formElements)) {
             sendData(formBody)
                 .then(data => {
                     statusBlock.textContent = successText
                     formElements.forEach(input => {
-                        input.value = ''
+                        if (input.closest('.feedback')) {} else {
+                            input.value = ''
+                        }
                     })
                 })
                 .catch(error => {
@@ -69,6 +63,7 @@ const sendForm = ({
                     setTimeout(() => statusBlock.textContent = '', 2000);
                     setTimeout(() => {
                         modal.style.display = 'none'
+                        modalOverlay.style.display = 'none'
                         document.body.style.overflow = ''
                     }, 4000);
                 })
