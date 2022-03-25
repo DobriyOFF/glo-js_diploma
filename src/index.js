@@ -1,6 +1,7 @@
 import accordeon from './modules/accordeon'
 import menu from './modules/menu'
 import modal from './modules/modal'
+import numAnimate from './modules/numAnimate'
 import sendForm from './modules/sendForm'
 import serviceScroll from './modules/serviceScroll'
 import serviceSlider from './modules/serviceSlider'
@@ -17,3 +18,4 @@ accordeon()
 sendForm({
     formId: 'form1',
 })
+numAnimate()

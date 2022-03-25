@@ -12,12 +12,11 @@ const sendForm = ({
 
     const validate = (list) => {
         let success = true
-        list.forEach(input => {
-            if (input.name == 'fio' && input.value.length < 2) {
-                console.log(input.name)
+        list.forEach(inputList => {
+            if (inputList.name == 'fio' && inputList.value.length < 2) {
                 success = false
             }
-            if (input.name == 'tel' && input.value.length < 10) {
+            if (inputList.name == 'tel' && inputList.value[0] === inputList.value[1]) {
                 success = false
             }
         })
@@ -31,6 +30,7 @@ const sendForm = ({
             headers: {
                 'Content-Type': 'application/json'
             }
+
         }).then(res => res.json())
     }
 
